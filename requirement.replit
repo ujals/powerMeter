@@ -1,1 +1,6 @@
-run main.py
+run = """
+nix-env -iA nixpkgs.python3Full nixpkgs.gcc nixpkgs.libxcrypt nixpkgs.python39Packages.pip
+export PYTHONPATH="/nix/store/c7ycrgwv039nqglbif98yggx211sdbcl-python3-3.12.3/lib/python3.12/site-packages"
+CFLAGS="-I/nix/store/5xynf9c9ml7d97q70kpq9rpqqmx13xl8-libxcrypt-4.4.36/include -I/tmp/pip-install-_nkbkvvo/httptools_b4af3378b87947729672cf40cc5b13b7/vendor/llhttp/include -I/tmp/pip-install-_nkbkvvo/httptools_b4af3378b87947729672cf40cc5b13b7/vendor/llhttp/src -I/nix/store/c7ycrgwv039nqglbif98yggx211sdbcl-python3-3.12.3/include/python3.12" pip install httptools
+python main.py
+"""
